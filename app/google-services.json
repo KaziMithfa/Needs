@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "837390886126",
+    "firebase_url": "https://needs-2c19a-default-rtdb.firebaseio.com",
+    "project_id": "needs-2c19a",
+    "storage_bucket": "needs-2c19a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:837390886126:android:01a87fa2850de674f0bfff",
+        "android_client_info": {
+          "package_name": "com.example.needs"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_zE3eGsG0ezQ-ZuZcw_YRFdmrTXeq97E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

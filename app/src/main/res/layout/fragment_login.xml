@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.LoginFragment">
+    
+    <EditText
+
+        android:layout_marginTop="300dp"
+        android:id="@+id/loginemail"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Email"
+        android:textColorHint="@color/colorPrimary"
+        android:inputType="textEmailAddress"
+
+        />
+
+    <EditText
+
+        android:layout_marginTop="20dp"
+        android:id="@+id/loginpassword"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="password"
+        android:inputType="textPassword"
+        android:layout_below="@+id/loginemail"
+        android:textColorHint="@color/colorPrimary"
+
+        />
+
+    <CheckBox
+
+        android:id="@+id/check_remember_me"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remember me"
+        android:textColor="#ff22"
+        android:layout_below="@+id/loginpassword"
+       android:layout_alignParentLeft="true"
+       android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+
+
+        />
+
+    <Button
+        android:id="@+id/loginBtnId"
+        android:layout_width="242dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="250dp"
+        android:layout_marginBottom="132dp"
+        android:text="Log In" />
+
+
+</RelativeLayout>
