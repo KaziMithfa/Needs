@@ -2,4 +2,5 @@
     <string name="app_name">Needs</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="default_web_client_id">837390886126-gb906uk3qtchvi6tphk830e9f4cc2vee.apps.googleusercontent.com</string>
 </resources>

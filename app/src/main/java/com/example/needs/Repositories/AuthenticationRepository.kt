@@ -4,6 +4,10 @@ import android.app.Application
 import android.content.Context
 import android.widget.Toast
 import com.example.needs.Models.Users
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.firebase.auth.AuthCredential
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -13,6 +17,7 @@ import com.google.firebase.database.ktx.getValue
 public class AuthenticationRepository() {
 
 
+    private val firebaseAuth = FirebaseAuth.getInstance()
     private val databaseReference = FirebaseDatabase.getInstance().getReference("Users")
 
     fun signUp(email : String ,pass : String,callback : (Boolean,String) -> Unit) {
@@ -88,6 +93,35 @@ public class AuthenticationRepository() {
             }
 
         })
+    }
+
+
+    fun signInWithGoogle(account : GoogleSignInAccount, onComplete : (Boolean) -> Unit){
+        val credential: AuthCredential = GoogleAuthProvider.getCredential(account.idToken, null)
+
+        firebaseAuth.signInWithCredential(credential).addOnCompleteListener{
+            if(it.isSuccessful){
+                val user = firebaseAuth.currentUser
+
+                if(user!= null){
+                    val userEmail = user.email
+                    val encodedEmail = userEmail?.replace(".", "_")?.replace("@", ",")
+                    if (encodedEmail != null) {
+                        databaseReference.child(encodedEmail).child("email").setValue(encodedEmail)
+                            .addOnCompleteListener{
+                                if(it.isSuccessful){
+                                    onComplete(true)
+                                }
+                                else{
+                                    onComplete(false)
+                                }
+                            }
+
+                    }
+                }
+            }
+        }
+
     }
 
 }

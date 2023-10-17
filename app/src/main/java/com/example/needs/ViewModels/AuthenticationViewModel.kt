@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModel
 import com.example.needs.Repositories.AuthenticationRepository
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 
 class AuthenticationViewModel(private val authenticationRepository: AuthenticationRepository) : ViewModel() {
 
@@ -19,6 +20,10 @@ class AuthenticationViewModel(private val authenticationRepository: Authenticati
         authenticationRepository.signIn(email, pass, callback)
 
 
+    }
+
+    fun signInwithGoogleAccount(account : GoogleSignInAccount, onComplete : (Boolean) -> Unit){
+        authenticationRepository.signInWithGoogle(account,onComplete)
     }
 
 

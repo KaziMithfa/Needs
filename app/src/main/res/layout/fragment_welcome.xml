@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/welcome"
     tools:context=".Fragments.WelcomeFragment">
 
@@ -20,17 +21,24 @@
 
         />
 
-    <TextView
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/loginwithgoogletxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Login with your  googel account....."
+        app:icon="@drawable/googlelogo"
+        app:iconTint="@color/black"
         android:textSize="17sp"
         android:textStyle="bold"
         android:textColor="#4CAF50"
         android:textAlignment="center"
         android:layout_above="@+id/registerTxt"
         android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/white"
+        app:iconPadding="4dp"
+        app:iconSize="20dp"
+
+
 
         />
 
